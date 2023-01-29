@@ -1,0 +1,38 @@
+{% extends 'basic.html' %}
+
+{% block title %} Courses - WeDue {%endblock%}
+
+{% block css %}
+.col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: row-reverse; */
+    border: 1px solid black;
+    margin: 2rem;
+    border-radius: 4rem 0rem;
+}
+.nav li a:hover{
+    text-decoration:underline;
+}
+.nav1{
+    margin-right: 14rem;
+}
+{%endblock%}
+{% block body %}
+<div class="offers">
+    {% for list in courseList%}
+    <div class="col">
+        <div class="img">
+            <img src="{{list.image.url}}">
+        </div>
+
+        <div class="para">
+            <h3>{{list.title}}</h3>
+            <p>{{list.desc}}</p>
+            <h2>Price: {{list.price}}</h2>
+            <input type="button" value="Buy Now">
+        </div>
+    </div>
+    {%endfor%}
+{% endblock%}

@@ -1,0 +1,66 @@
+{% extends 'basic.html' %}
+
+{% block title %} Contact Page- WeDue {%endblock%}
+
+{% block css %}  
+.form-group{
+
+    margin: 1rem;
+    font-size: 2rem;
+}
+.container{
+    text-align: center;
+}
+input{
+    background-color: white;
+    border-radius: 0.3rem;
+    font-size: 1.3rem;
+}
+.nav1{
+  margin-right: 14rem;
+}
+input:hover{
+    background-color: white;
+    color: black;
+    
+}
+.nav li a:hover{
+  text-decoration:underline;
+}
+{%endblock%}
+{% block body %}
+<form action="/contact/" method="POST">
+    {% csrf_token %}
+    <div class="container ">
+        <h1>Contact Us </h1>
+        <form action = "/" method="POST">
+          {% csrf_token %}
+            <div class="form-group">
+              <label for="name">Name: </label>
+              <input type="text" class="form-control" id="name " name="name" placeholder="Enter your  name : ">
+            </div>
+            <div class="form-group">
+                <label for="name">Email Id: </label>
+                <input type="email" class="form-control" id="email " name="email" placeholder="Enter your Email : ">
+              </div>
+              <div class="form-group">
+                <label for="name">Phone No:  </label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your Phone No : ">
+              </div>
+              <div class="form-group">
+                <label for="name">City: </label>
+                <input type="text" class="form-control" id="text " name="state" placeholder="Enter your State : ">
+              </div>
+              <div class="form-group">
+                <label for="name">Country: </label>
+                <input type="text" class="form-control" id="country " name="country" placeholder="Enter your Country : ">
+              </div>
+            
+            <div class="form-group">
+              <label for="desc">Any Query: </label>
+              <textarea class="form-control" id="quary" name="quary"  rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+    </div>
+{% endblock%}

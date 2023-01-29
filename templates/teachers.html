@@ -1,0 +1,32 @@
+{% extends 'basic.html' %}
+
+{% block title %} Teachers Page- WeDue {%endblock%}
+
+{% block css %}
+.teachers{
+    text-align: center;
+}
+.teacher{
+    margin: 2rem;
+}
+img{
+    border-radius: 7rem;
+}
+.nav1{
+    margin-right: 14rem;
+}
+.nav li a:hover{
+    text-decoration:underline;
+}
+{%endblock%}
+{% block body %}
+<div class="teachers">
+    {% for teacher in teachers%}
+    <div class="teacher">
+        <img src="{{teacher.img.url}}" alt="">
+        <h2>Name: {{teacher.name}}</h2>
+        <p>{{teacher.decs}}</p>
+    </div>
+    {%endfor%}
+</div>
+{% endblock%}

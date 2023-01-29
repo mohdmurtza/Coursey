@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WeDue</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <style>
+        {% block css %} 
+        
+        {% endblock%}
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="navigation">
+            <div class="nav">
+                <div class="nav1">
+                    <h1>WeDue</h1><br>
+                    <p>Communicate. Collaborate. Create.</p>
+                </div>
+                <div class="nav2">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/courses">Courses</a></li>
+                        <li><a href="/teachers">Teachers</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <!-- <li><a href="/login">Login</a></li> -->
+                        <li class="btn" id="get"><a href="/getstarted">Get Started</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+{% block body %} {% endblock%}

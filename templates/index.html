@@ -1,0 +1,130 @@
+{% extends 'basic.html'%}
+{% block title %} Title of About {% endblock %}
+{% load static %}
+
+{% block css %} 
+.nav li a:hover{
+    text-decoration:underline;
+}
+
+.nav1{
+    margin-right: 14rem;
+}
+{% endblock %}
+
+{% block body %}
+<div class="cnt">
+    <div class="ct">
+        <h1>Communicate. <br> Collaborate. Create.</h1>
+        <p>WeDu provides an effective and powerful way to manage <br> your projects</p><br> <br>
+        <button class="btn" type="submit">Get Started</button>
+        <div class="in">
+            <div class="op">
+                <p>Security & Speed</p>
+            </div>
+            <div class="op">
+                <p>Flexibility & Scalability</p>
+            </div>
+            <div class="op">
+                <p>Better Collaboration</p>
+            </div>
+        </div>
+    </div>
+    <div class="ct">
+        <img src="{% static 'img/images.jpg' %}" alt="">
+    </div>
+</div>
+</div>
+
+<div class="some">
+    <div class="sm1">
+        <h1>With the Right Software, Great Things Can Happen</h1>
+    </div>
+    <div class="sm2">
+        <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
+            click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere
+            you like on your page. I’m a great place for you to tell a story and let your users know a little more
+            about you.</p>
+    </div>
+</div>
+<div class="main">
+    <div class="offer">
+        <h1 class="offerhead">What We Offer</h1>
+        <p class="offercn">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit
+            Text” or double
+            <br> click me to add your own content and make changes to the font.
+        </p>
+        <div class="offers">
+            {% for course in courses%}
+            <div class="col-1">
+                <div class="img">
+                    <img src="{{course.image.url}}">
+                </div>
+
+                <div class="para">
+                    <h3>{{course.title}}</h3>
+                    <p>{{course.desc}}</p>
+                    <h2>Price: {{course.price}}</h2>
+                    <input type="button" value="Buy Now">
+                </div>
+            </div>
+            {%endfor%}
+
+            <!-- <div class="col-2">
+                <div class="img">
+                    <img src="{% static 'img/c.png' %}">
+                </div>
+                <div class="para">
+                    <h3>C Language Full Course</h3>
+                    <p>- Lorem ipsum dolor sit Lorem ipsum dolor sit..</p><br>
+                    <p>- Lorem ipsum dolor sit. Lorem ipsum dolor sit.</p><br>
+                    <p>- Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.</p><br>
+                    <p>- Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur.</p><br>
+                    <p class="price">PRICE - 499 .</p><br><br>
+
+                    <input type="button" value="Buy Now">
+
+
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="img">
+                    <img src="{% static 'img/images.jpg' %}">
+                </div>
+                <div class="para">
+                    <h3>World Growing With AI</h3>
+                    <p>- Lorem ipsum dolor sit Lorem ipsum dolor sit..</p><br>
+                    <p>- Lorem ipsum dolor sit. Lorem ipsum dolor sit.</p><br>
+                    <p>- Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.</p><br>
+                    <p>- Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur.</p><br>
+                    <p class="price">PRICE - 4999 .</p><br><br>
+
+                    <input type="button" value="Buy Now">
+
+
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="img">
+                    <img src="{% static 'img/aws.png' %}">
+                </div>
+                <div class="para">
+                    <h3>AWS Basic To Advance</h3>
+                    <p>- Lorem ipsum dolor sit Lorem ipsum dolor sit..</p><br>
+                    <p>- Lorem ipsum dolor sit. Lorem ipsum dolor sit.</p><br>
+                    <p>- Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.</p><br>
+                    <p>- Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur.</p><br>
+                    <p class="price">PRICE - 2499 .</p><br><br>
+
+                    <input type="button" value="Buy Now">
+                </div> -->
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock%}
